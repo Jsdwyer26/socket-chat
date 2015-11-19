@@ -17,17 +17,27 @@
 	<!-- list of messages -->
 	<ul id="messages"></ul>
 
-	<!-- form to send a new message -->
+	<!-- 4. form to send a new message -->
 	<form id="send-msg">
-		<input type="text" id="new-msg" placeholder = "Your message" autofocus>
+	    <div class="form-group">		          
+			<label for="new-msg"></label>
+			<textarea class="form-control" rows="3" id="new-msg"></textarea>
+	    </div>
+	 </form>
+
+
+	<!-- <form id="send-msg">
+
+		<input type="text" class="form-control" id="new-msg" placeholder="Speak">		          
+		
 		<input type="submit" value="send">
-	</form>	
-	
+	</form>	 -->
+<!-- <input type="text" id="new-msg" placeholder = "Your message" autofocus> -->
 
 
 	<!-- jQuery -->
   	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	 <!-- socket.io required BEFORE main.js -->
+	 <!-- 2. socket.io required BEFORE main.js -->
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 	<!-- custom -->
 	<script type="text/javascript" src="main.js"></script>

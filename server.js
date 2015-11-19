@@ -13,14 +13,20 @@ app.use(bodyParser.urlencoded({ extended: true}));
 //B. static files from public folder
 app.use(express.static(__dirname + '/public'));
 
+
 //Set view engine to hbs
 app.set('view engine', 'hbs');
 
 //SOCKET.IO SET-UP
-//A. connect to socket
-//this listens for users (clients) connecting and disconnecting.
+//1. connect to socket...This listens for users (clients) connecting and disconnecting.
 io.on('connection', function(socket){
 	console.log('a user connected');
+
+	//6. receive and broadcast chat messages
+	socket.on('chat message', function (msg) {
+		console.log('message', msg);
+		io.emit('chat message', msg);
+	});
 
 	socket.on('disconnect', function (){
 		console.log('user disconnected');
