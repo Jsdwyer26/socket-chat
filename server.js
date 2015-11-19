@@ -16,13 +16,24 @@ app.use(express.static(__dirname + '/public'));
 //Set view engine to hbs
 app.set('view engine', 'hbs');
 
+//SOCKET.IO SET-UP
+//A. connect to socket
+//this listens for users (clients) connecting and disconnecting.
+io.on('connection', function(socket){
+	console.log('a user connected');
+
+	socket.on('disconnect', function (){
+		console.log('user disconnected');
+	});
+});
+
+
+
 
 //homepage route
 app.get('/', function (req, res) {
 	res.render('index');
-})
-
-
+});
 
 
 

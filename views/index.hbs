@@ -14,11 +14,23 @@
 </head>
 <body>
 	<h1>Hellooo</h1>
+	<!-- list of messages -->
+	<ul id="messages"></ul>
 
-	<!-- jquery -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<!-- form to send a new message -->
+	<form id="send-msg">
+		<input type="text" id="new-msg" placeholder = "Your message" autofocus>
+		<input type="submit" value="send">
+	</form>	
+	
+
+
+	<!-- jQuery -->
+  	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	 <!-- socket.io required BEFORE main.js -->
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 	<!-- custom -->
-  <script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
